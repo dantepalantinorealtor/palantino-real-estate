@@ -283,17 +283,66 @@
       overflow: hidden;
     }
 
-    .hero-bg {
+    /* Hero triptych — three vertical panels */
+    .hero-triptych {
       position: absolute;
       inset: 0;
-      background:
-        linear-gradient(to bottom, rgba(13,35,64,0.55) 0%, rgba(13,35,64,0.3) 50%, rgba(13,35,64,0.7) 100%),
-        url('https://images.unsplash.com/photo-1512328362052-86f06260ac13?w=1800&q=85&auto=format&fit=crop') center/cover no-repeat;
-      transform: scale(1.04);
-      transition: transform 8s ease;
+      display: flex;
     }
 
-    #hero.loaded .hero-bg { transform: scale(1); }
+    .hero-panel {
+      flex: 1;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-panel + .hero-panel {
+      border-left: 1px solid rgba(199,161,91,0.4);
+    }
+
+    .hero-panel img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      transform: scale(1.05);
+      transition: transform 9s ease;
+    }
+
+    #hero.loaded .hero-panel img { transform: scale(1); }
+
+    .hero-panel-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom,
+        rgba(13,35,64,0.42) 0%,
+        rgba(13,35,64,0.20) 45%,
+        rgba(13,35,64,0.68) 100%);
+    }
+
+    .hero-panel-label {
+      position: absolute;
+      bottom: 2.2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: var(--sans);
+      font-size: 0.5rem;
+      font-weight: 400;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: rgba(243,239,232,0.55);
+      white-space: nowrap;
+      z-index: 1;
+    }
+
+    @media (max-width: 700px) {
+      .hero-triptych { flex-direction: column; }
+      .hero-panel + .hero-panel {
+        border-left: none;
+        border-top: 1px solid rgba(199,161,91,0.35);
+      }
+    }
 
     .hero-content {
       position: relative;
@@ -1726,7 +1775,35 @@
 
   <!-- ===== HERO ===== -->
   <section id="hero" aria-label="Hero">
-    <div class="hero-bg" role="img" aria-label="Luxury Philadelphia home exterior"></div>
+    <div class="hero-triptych" role="img" aria-label="Luxury homes in Old City Philadelphia, Bucks County, and the Jersey Shore">
+      <div class="hero-panel">
+        <img
+          src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=900&q=82&auto=format&fit=crop&crop=edges"
+          alt="Historic brick rowhouse in Old City, Philadelphia"
+          loading="eager"
+        />
+        <div class="hero-panel-overlay"></div>
+        <span class="hero-panel-label">Old City · Philadelphia</span>
+      </div>
+      <div class="hero-panel">
+        <img
+          src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=900&q=82&auto=format&fit=crop&crop=edges"
+          alt="Luxury estate home in Bucks County, Pennsylvania"
+          loading="eager"
+        />
+        <div class="hero-panel-overlay"></div>
+        <span class="hero-panel-label">Bucks County</span>
+      </div>
+      <div class="hero-panel">
+        <img
+          src="https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?w=900&q=82&auto=format&fit=crop&crop=edges"
+          alt="Coastal home at the Jersey Shore"
+          loading="eager"
+        />
+        <div class="hero-panel-overlay"></div>
+        <span class="hero-panel-label">Jersey Shore</span>
+      </div>
+    </div>
 
     <div class="hero-content">
       <span class="hero-eyebrow">Philadelphia · Montgomery County · Bucks County · South Jersey · Jersey Shore</span>
