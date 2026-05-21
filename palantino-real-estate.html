@@ -133,6 +133,7 @@
       align-items: center;
       justify-content: space-between;
       padding: 1.8rem 4rem;
+      background: linear-gradient(to bottom, rgba(13,35,64,0.78) 0%, transparent 100%);
       transition: background var(--transition), padding var(--transition), backdrop-filter var(--transition);
     }
 
@@ -1058,126 +1059,6 @@
     }
 
     /* =============================================
-       TESTIMONIALS
-    ============================================= */
-    #testimonials {
-      padding: 8rem 4rem;
-      background: var(--navy);
-      text-align: center;
-    }
-
-    #testimonials .section-label { color: var(--gold); }
-
-    #testimonials h2 {
-      font-family: var(--serif);
-      font-size: clamp(2rem, 3.5vw, 3rem);
-      font-weight: 300;
-      letter-spacing: 0.02em;
-      color: var(--ivory);
-      margin-bottom: 4rem;
-    }
-
-    #testimonials h2 em { font-style: italic; color: var(--gold); }
-
-    .testimonials-carousel {
-      max-width: 800px;
-      margin: 0 auto;
-      position: relative;
-    }
-
-    .testimonial-slide {
-      display: none;
-    }
-
-    .testimonial-slide.active {
-      display: block;
-      animation: fadeIn 0.6s ease;
-    }
-
-    .testimonial-quote-mark {
-      font-family: var(--serif);
-      font-size: 5rem;
-      font-weight: 300;
-      color: rgba(199,161,91,0.25);
-      line-height: 0.5;
-      margin-bottom: 1.5rem;
-    }
-
-    .testimonial-text {
-      font-family: var(--serif);
-      font-size: clamp(1.1rem, 2vw, 1.4rem);
-      font-weight: 300;
-      font-style: italic;
-      line-height: 1.7;
-      letter-spacing: 0.02em;
-      color: rgba(243,239,232,0.85);
-      margin-bottom: 2rem;
-    }
-
-    .testimonial-author {
-      font-family: var(--sans);
-      font-size: 0.62rem;
-      font-weight: 500;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: var(--gold);
-    }
-
-    .testimonial-location {
-      font-family: var(--sans);
-      font-size: 0.58rem;
-      font-weight: 300;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: rgba(243,239,232,0.4);
-      margin-top: 0.2rem;
-    }
-
-    .carousel-controls {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 1rem;
-      margin-top: 3rem;
-    }
-
-    .carousel-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: rgba(199,161,91,0.3);
-      cursor: pointer;
-      transition: background var(--transition), transform var(--transition);
-      border: none;
-    }
-
-    .carousel-dot.active {
-      background: var(--gold);
-      transform: scale(1.3);
-    }
-
-    .carousel-arrow {
-      background: none;
-      border: 1px solid rgba(199,161,91,0.3);
-      color: rgba(199,161,91,0.6);
-      width: 38px;
-      height: 38px;
-      border-radius: 50%;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.8rem;
-      transition: border-color var(--transition), color var(--transition), background var(--transition);
-    }
-
-    .carousel-arrow:hover {
-      border-color: var(--gold);
-      color: var(--navy);
-      background: var(--gold);
-    }
-
-    /* =============================================
        CONTACT
     ============================================= */
     #contact {
@@ -1756,7 +1637,7 @@
       #nav { padding: 1.5rem 2.5rem; }
       #nav.scrolled { padding: 1rem 2.5rem; }
       .nav-links { gap: 2rem; }
-      #listings, #about, #neighborhoods, #media, #testimonials, #contact {
+      #listings, #about, #neighborhoods, #media, #contact {
         padding: 6rem 2.5rem;
       }
       .stats-bar { padding: 3rem 2.5rem; }
@@ -1798,7 +1679,7 @@
 
       .hero-headline { font-size: clamp(2.2rem, 10vw, 3.5rem); }
 
-      #listings, #about, #neighborhoods, #media, #testimonials, #contact {
+      #listings, #about, #neighborhoods, #media, #contact {
         padding: 5rem 1.5rem;
       }
       .stats-bar { padding: 2.5rem 1.5rem; grid-template-columns: 1fr 1fr; }
@@ -2085,59 +1966,6 @@
         />
         <button class="newsletter-btn" type="submit">Subscribe</button>
       </form>
-    </div>
-  </section>
-
-  <!-- ===== TESTIMONIALS ===== -->
-  <section id="testimonials" aria-labelledby="testimonials-heading">
-    <span class="section-label reveal">Client Stories</span>
-    <h2 id="testimonials-heading" class="reveal">What Our <em>Clients</em> Say</h2>
-
-    <div class="testimonials-carousel" role="region" aria-label="Client testimonials">
-      <div class="testimonial-slide active" id="slide-0">
-        <div class="testimonial-quote-mark" aria-hidden="true">"</div>
-        <blockquote class="testimonial-text">
-          "Dante and Sal made what felt like an impossible search feel effortless. They understood exactly what we were looking for before we did — and found us our dream home in Avalon in under three weeks."
-        </blockquote>
-        <p class="testimonial-author">The Marchetti Family</p>
-        <p class="testimonial-location">Avalon, NJ</p>
-      </div>
-
-      <div class="testimonial-slide" id="slide-1">
-        <div class="testimonial-quote-mark" aria-hidden="true">"</div>
-        <blockquote class="testimonial-text">
-          "In a fast-moving Philadelphia market, having Palantino Real Estate in your corner is simply the difference between getting the house and not. Their market knowledge is unparalleled."
-        </blockquote>
-        <p class="testimonial-author">Dr. & Mrs. Abbatiello</p>
-        <p class="testimonial-location">Society Hill, Philadelphia</p>
-      </div>
-
-      <div class="testimonial-slide" id="slide-2">
-        <div class="testimonial-quote-mark" aria-hidden="true">"</div>
-        <blockquote class="testimonial-text">
-          "We relocated from New York and needed someone who truly knew both the city and the shore. Sal's strategic guidance and Dante's energy made our transition seamless. We're now in our forever home."
-        </blockquote>
-        <p class="testimonial-author">The Rinaldi-Bautista Family</p>
-        <p class="testimonial-location">Radnor, PA</p>
-      </div>
-
-      <div class="testimonial-slide" id="slide-3">
-        <div class="testimonial-quote-mark" aria-hidden="true">"</div>
-        <blockquote class="testimonial-text">
-          "Their presentation of our property was unlike anything we'd seen. Professional photography, a custom video tour, and a marketing strategy that generated multiple offers in the first weekend."
-        </blockquote>
-        <p class="testimonial-author">J. & M. Ferreira</p>
-        <p class="testimonial-location">Sea Isle City, NJ</p>
-      </div>
-
-      <div class="carousel-controls" role="group" aria-label="Testimonial navigation">
-        <button class="carousel-arrow" id="prevSlide" aria-label="Previous testimonial">←</button>
-        <button class="carousel-dot active" data-slide="0" aria-label="Testimonial 1" aria-current="true"></button>
-        <button class="carousel-dot" data-slide="1" aria-label="Testimonial 2"></button>
-        <button class="carousel-dot" data-slide="2" aria-label="Testimonial 3"></button>
-        <button class="carousel-dot" data-slide="3" aria-label="Testimonial 4"></button>
-        <button class="carousel-arrow" id="nextSlide" aria-label="Next testimonial">→</button>
-      </div>
     </div>
   </section>
 
@@ -2955,45 +2783,6 @@
     }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
 
     document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-
-    // ==========================================
-    // TESTIMONIALS CAROUSEL
-    // ==========================================
-    let currentSlide = 0;
-    const slides = document.querySelectorAll('.testimonial-slide');
-    const dots = document.querySelectorAll('.carousel-dot');
-    let autoSlideTimer;
-
-    function goToSlide(idx) {
-      slides[currentSlide].classList.remove('active');
-      dots[currentSlide].classList.remove('active');
-      dots[currentSlide].setAttribute('aria-current', 'false');
-      currentSlide = (idx + slides.length) % slides.length;
-      slides[currentSlide].classList.add('active');
-      dots[currentSlide].classList.add('active');
-      dots[currentSlide].setAttribute('aria-current', 'true');
-    }
-
-    function startAutoSlide() {
-      autoSlideTimer = setInterval(() => goToSlide(currentSlide + 1), 5500);
-    }
-
-    function resetAutoSlide() {
-      clearInterval(autoSlideTimer);
-      startAutoSlide();
-    }
-
-    document.getElementById('prevSlide').addEventListener('click', () => { goToSlide(currentSlide - 1); resetAutoSlide(); });
-    document.getElementById('nextSlide').addEventListener('click', () => { goToSlide(currentSlide + 1); resetAutoSlide(); });
-
-    dots.forEach(dot => {
-      dot.addEventListener('click', () => {
-        goToSlide(parseInt(dot.dataset.slide));
-        resetAutoSlide();
-      });
-    });
-
-    startAutoSlide();
 
     // ==========================================
     // FORMS
